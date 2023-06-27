@@ -5,7 +5,7 @@
   
     /* preload
     ------------------------------------------------------------------------------------- */
-    const preloader = function () {
+    const preload = function () {
       setTimeout(function () {
         $(".preload").fadeOut("slow", function () {
           $(this).remove();
