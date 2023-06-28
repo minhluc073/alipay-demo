@@ -834,6 +834,7 @@ input[type="radio"] {
 }
 .scan-qr.hide{
   display: none;
+  width: 200px;
 }
 @keyframes spin {
   from {
