@@ -564,19 +564,19 @@ input[type="radio"] {
   margin-bottom: 80px !important;
 }
 
-/* page */
-.page-wraper {
+.tf-wrapper {
   padding: 40px 0;
   position: relative;
   min-height: 100vh;
   overflow: hidden;
- 
+ display: flex;
+ align-items: center;
   z-index: 1;
 }
 
 .logo {
-  width: 120px;
-  height: 100px;
+  width: 150px;
+    height: 124px;
   overflow: hidden;
 }
 
@@ -584,46 +584,43 @@ input[type="radio"] {
   width: 100%;
   height: 100%;
 }
-
-.tf-title {
-  font-size: 38px;
+.tf-title{
+  padding-bottom: 60px;
+}
+.tf-title h4{
+  font-size: 44px;
   font-weight: 600;
-  margin-bottom: 20px;
-  margin-top: 20px;
-  line-height: 1.3;
+  padding-top: 40px;
+  line-height: 60px;
 }
 
-.point-list {
-  list-style: none;
-  margin: 0 0 30px 0;
-  padding: 0;
-  display: flex;
-  flex-wrap: wrap;
+.tf-listing {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding-bottom: 40px;
 }
 
-.point-list li {
-  width: 50%;
-  list-style: none;
-  padding: 2px 0 2px 40px;
-  position: relative;
+.tf-listing li {
+  padding: 2px 0 2px 20px;
   font-size: 20px;
   color: #161e29;
-
+  display: flex;
+  align-items: center;
+  gap: 15px;
   margin-bottom: 12px;
 }
 
-.point-list li::after {
-  font-family: "icomoon";
-  content: "\eab0";
-  font-size: 20px;
-  color: #533dea;
-  position: absolute;
+.tf-listing li::before {
+  content: "";
+  background: #533dea;
+  border-radius: 50%;
   left: 0;
-  height: 20px;
-  top: 5px;
+  width: 10px;
+  height: 10px;
+  top: 0px;
 }
 
-.phoneWrapper {
+.box-left {
   width: 400px;
   height: 780px;
   border-radius: 30px;
@@ -636,7 +633,7 @@ input[type="radio"] {
   position: relative;
 }
 
-.phoneWrapper .in {
+.box-left .wrap-phone {
   width: 375px;
   height: 750px;
   background: #000000;
@@ -644,7 +641,7 @@ input[type="radio"] {
   overflow: hidden;
 }
 
-.phoneWrapper .in .getFrame {
+.box-left .wrap-phone .frame {
   width: 396px;
   height: 750px;
   border: 0 !important;
@@ -689,22 +686,48 @@ input[type="radio"] {
   font-weight: 500;
   font-size: 16px;
   line-height: 26px;
-  border-radius: 15px;
+  border-radius: 10px;
   background-color: #533dea;
   border: 1px solid #533dea;
   color: #ffffff;
 }
-
+.tf-btn-success.outline{
+  background-color: #ffffff;
+  color: #533dea;
+}
 .tf-btn-success:hover {
   border: 1px solid #533dea;
   background-color: #ffffff;
   color: #533dea;
 }
-
+.tf-btn-success.outline:hover {
+  background-color: #533dea;
+  color: #ffffff;
+}
+.btn-portfolio{
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  padding: 12px 30px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 26px;
+  border-radius: 10px;
+  border: 1px solid #82b440;
+  background-color: #ffffff;
+  color: #82b440;
+}
+.btn-portfolio:hover {
+  background-color: #82b440;
+  color: #ffffff;
+}
+.btn-portfolio img {
+  width: 18px;
+  height: 18px;
+  
+}
 .scan-qr {
   font-size: 12px;
-  width: 250px;
-  height: auto;
   background: rgba(40, 62, 180, 0.1);
   text-align: center;
   border-radius: 12px;
@@ -726,8 +749,19 @@ input[type="radio"] {
   text-transform: capitalize;
   margin-top: 10px;
 }
-
-.mobileDetected {
+.box-right h5 {
+  color: #533dea;
+  font-size: 27px;
+  font-weight: 700;
+  text-align: center;
+}
+.box-right svg {
+  width: 84px;
+  height: 158px;
+  transform: rotate(15deg);
+}
+ 
+.mobile {
   display: none;
   position: fixed;
   left: 0;
@@ -735,17 +769,17 @@ input[type="radio"] {
   right: 0;
   bottom: 0;
   background: #fff;
-  z-index: 8000;
+  z-index: 1000;
   align-items: center;
   justify-content: center;
 }
-.mobileDetected .in {
+.mobile .inner {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 20px;
+  gap: 30px;
 }
-.mobileDetected h3 {
+.mobile h3 {
   color: #666;
 }
 .preload {
@@ -798,7 +832,9 @@ input[type="radio"] {
   margin: auto;
   animation: spin 1s infinite linear;
 }
-
+.scan-qr.hide{
+  display: none;
+}
 @keyframes spin {
   from {
       transform: rotate(0deg);
@@ -807,11 +843,20 @@ input[type="radio"] {
       transform: rotate(360deg);
   }
 }
+@media only screen and (max-width: 1400px){
+  .scan-qr.hide{
+    display: block;
+  }
+  .box-right {
+    display: none;
+  }
+
+}
 @media only screen and (max-width: 991px){
-  .mobileDetected {
+  .mobile {
     display: flex;
   }
-  .desktopdeDetected {
+  .desktop {
     display: none;
   }
 } 
