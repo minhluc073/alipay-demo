@@ -575,8 +575,8 @@ input[type="radio"] {
 }
 
 .logo {
-  width: 150px;
-  height: 150px;
+  width: 70px;
+  height: 70px;
   overflow: hidden;
 }
 
@@ -586,12 +586,22 @@ input[type="radio"] {
 }
 .tf-title{
   padding-bottom: 60px;
+
+}
+.tf-title .inner{
+  display: flex;
+  gap: 20px ;
+  padding-bottom: 8px;
 }
 .tf-title h4{
-  font-size: 44px;
-  font-weight: 600;
-  padding-top: 40px;
-  line-height: 60px;
+  font-size: 55px;
+  font-weight: 700;
+  line-height: 80px;
+}
+.tf-title h3 {
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 50px;
 }
 
 .tf-listing {

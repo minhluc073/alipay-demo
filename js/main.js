@@ -10,7 +10,7 @@
         $(".preload").fadeOut("slow", function () {
           $(this).remove();
         });
-      }, 800);
+      }, 150);
     };
   
     /* Dom Ready */
